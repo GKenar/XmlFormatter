@@ -57,8 +57,15 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Таблица">
-                <DataGrid x:Name="dataGrid1" AutoGenerateColumns="True" />
+                <DataGrid x:Name="dataGrid1" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Первая колонка" Binding="{Binding Path=FirstColumn}" />
+                        <DataGridTextColumn Header="Вторая колонка" Binding="{Binding Path=SecondColumn}" />
+                        <DataGridTextColumn Header="Третья колонка" Binding="{Binding Path=ThirdColumn}" />
+                    </DataGrid.Columns>
+                </DataGrid>
             </TabItem>
         </TabControl>
+        <Button Grid.Row="2" Grid.Column="0" Name="submitButton" Click="submitButton_Click" >Sumbit</Button>
     </Grid>
 </Window>
