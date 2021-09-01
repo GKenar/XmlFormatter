@@ -5,8 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:XmlFormatter"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="600" Width="600">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TabControl Grid.Row="0" Grid.ColumnSpan="2">
+            <TabItem Header="Текстовые поля">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0">Текстовое поле 1</TextBlock>
+                    <TextBox Grid.Row="1" Grid.Column="0" Margin="5 0"/>
+                    <TextBlock Grid.Row="2" Grid.Column="0">Текстовое поле 2</TextBlock>
+                    <TextBox Grid.Row="3" Grid.Column="0" Margin="5 0"/>
+                    <TextBlock Grid.Row="4" Grid.Column="0">Текстовое поле 3</TextBlock>
+                    <TextBox Grid.Row="5" Grid.Column="0" Margin="5 0"/>
+                    <TextBlock Grid.Row="6" Grid.Column="0">Текстовое поле 4</TextBlock>
+                    <TextBox Grid.Row="7" Grid.Column="0" Margin="5 0"/>
+                    <TextBlock Grid.Row="8" Grid.Column="0">Текстовое поле 5</TextBlock>
+                    <TextBox Grid.Row="9" Grid.Column="0" Margin="5 0"/>
+                    <TextBlock Grid.Row="0" Grid.Column="1">Текстовое поле 6</TextBlock>
+                    <TextBox Grid.Row="1" Grid.Column="1" Margin="5 0"/>
+                    <TextBlock Grid.Row="2" Grid.Column="1">Текстовое поле 7</TextBlock>
+                    <TextBox Grid.Row="3" Grid.Column="1" Margin="5 0"/>
+                    <TextBlock Grid.Row="4" Grid.Column="1">Текстовое поле 8</TextBlock>
+                    <TextBox Grid.Row="5" Grid.Column="1" Margin="5 0"/>
+                    <TextBlock Grid.Row="6" Grid.Column="1">Текстовое поле 9</TextBlock>
+                    <TextBox Grid.Row="7" Grid.Column="1" Margin="5 0"/>
+                    <TextBlock Grid.Row="8" Grid.Column="1">Текстовое поле 10</TextBlock>
+                    <TextBox Grid.Row="9" Grid.Column="1" Margin="5 0"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Таблица">
+                <DataGrid x:Name="dataGrid1" AutoGenerateColumns="True" />
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
