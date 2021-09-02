@@ -56,6 +56,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Common\DataFromMainWindow.cs" />
+    <Compile Include="Model\IXmlDocumentBuilder.cs" />
+    <Compile Include="Model\XmlDocumentBuilder.cs" />
     <Compile Include="Model\XmlFormatterModel.cs" />
     <Compile Include="View\IMainWindow.cs" />
     <Page Include="MainWindow.xaml">
