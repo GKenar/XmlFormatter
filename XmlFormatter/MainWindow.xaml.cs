@@ -28,5 +28,10 @@ namespace XmlFormatter
         {
             Console.WriteLine();
         }
+
+        private void attachFileButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

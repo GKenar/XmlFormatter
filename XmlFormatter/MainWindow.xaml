@@ -65,6 +65,20 @@
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>
+            <TabItem Header="Файлы">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <ListBox Name="filesListBox" Grid.RowSpan="2" Grid.Column="0" />
+                    <Button Name="attachFileButton" Grid.Column="1" Grid.Row="0" Click="attachFileButton_Click">Прикрепить файл</Button>
+                </Grid>
+            </TabItem>
         </TabControl>
         <Button Grid.Row="2" Grid.Column="0" Name="submitButton" Click="submitButton_Click" >Sumbit</Button>
     </Grid>
