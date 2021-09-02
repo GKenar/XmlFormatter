@@ -1,6 +1,6 @@
 ﻿namespace XmlFormatter.Common
 {
-    class MyTableRow
+    public class MyTableRow
     {
         public string FirstColumn { get; set; }
         public string SecondColumn { get; set; }
