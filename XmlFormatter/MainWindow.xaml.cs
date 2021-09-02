@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows;
 using XmlFormatter.Common;
+using Microsoft.Win32;
 
 namespace XmlFormatter
 {
@@ -10,6 +11,7 @@ namespace XmlFormatter
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<string> _filesList = new List<string>();
 
         List<MyTableRow> list = new List<MyTableRow>
         {
@@ -31,7 +33,15 @@ namespace XmlFormatter
 
         private void attachFileButton_Click(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                _filesList.AddRange(openFileDialog.FileNames);
 
+            filesListBox.Items.Clear();
+            foreach (var fileName in _filesList)
+            {
+                filesListBox.Items.Add(fileName);
+            }
         }
     }
 }
