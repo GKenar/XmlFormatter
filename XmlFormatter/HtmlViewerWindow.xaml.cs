@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Awesomium.Core;
 using XmlFormatter.View;
 
 namespace XmlFormatter
@@ -27,8 +28,8 @@ namespace XmlFormatter
 
         public void LoadHtml(string html)
         {
-            var uri = new Uri($"data:text/html,{html}", UriKind.Absolute);
-            webControl1.Source = uri;
+            webControl1.ViewType = WebViewType.Window;
+            webControl1.LoadHTML(html);
         }
     }
 }
