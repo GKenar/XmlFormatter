@@ -14,7 +14,8 @@ namespace XmlFormatter
     {
         public event Action<DataFromMainWindow> SubmitButtonPressed = delegate {};
 
-        private List<string> _filesList = new List<string>();
+        private readonly List<string> _filesList = new List<string>();
+        private readonly IIHtmlViewerWindowFactory _htmlViewerWindowFactory;
 
         List<MyTableRow> _tableRowsList = new List<MyTableRow>
         {
@@ -27,6 +28,7 @@ namespace XmlFormatter
             InitializeComponent();
 
             dataGrid1.ItemsSource = _tableRowsList;
+            _htmlViewerWindowFactory = new HtmlViewerWindowFactory();
         }
 
         private void submitButton_Click(object sender, RoutedEventArgs e)
@@ -53,6 +55,13 @@ namespace XmlFormatter
             };
 
             SubmitButtonPressed(sendingData);
+        }
+
+        public void ShowResult(string html)
+        {
+            var htmlViewer = _htmlViewerWindowFactory.Create();
+            htmlViewer.Show();
+            htmlViewer.LoadHtml(html);
         }
 
         private void attachFileButton_Click(object sender, RoutedEventArgs e)

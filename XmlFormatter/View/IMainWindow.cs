@@ -7,5 +7,6 @@ namespace XmlFormatter.View
     {
         event Action<DataFromMainWindow> SubmitButtonPressed;
         void Show();
+        void ShowResult(string html);
     }
 }

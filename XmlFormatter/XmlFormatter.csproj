@@ -16,7 +16,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -35,6 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Awesomium.Core, Version=1.7.5.1, Culture=neutral, PublicKeyToken=e1a0d7c8071a5214, processorArchitecture=x86" />
+    <Reference Include="Awesomium.Windows.Controls, Version=1.7.5.1, Culture=neutral, PublicKeyToken=7a34e179b8b61c39, processorArchitecture=x86" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -56,6 +58,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Common\DataFromMainWindow.cs" />
+    <Compile Include="HtmlViewerWindow.xaml.cs">
+      <DependentUpon>HtmlViewerWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Html\HtmlTag.cs" />
     <Compile Include="Model\ContentEncoder.cs" />
     <Compile Include="Model\FilesLoader.cs" />
@@ -63,7 +68,14 @@
     <Compile Include="Model\IXmlDocumentBuilder.cs" />
     <Compile Include="Model\XmlDocumentBuilder.cs" />
     <Compile Include="Model\XmlFormatterModel.cs" />
+    <Compile Include="View\HtmlViewerWindowFactory.cs" />
+    <Compile Include="View\IHtmlViewerWindow.cs" />
+    <Compile Include="View\IHtmlViewerWindowFactory.cs" />
     <Compile Include="View\IMainWindow.cs" />
+    <Page Include="HtmlViewerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
