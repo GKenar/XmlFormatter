@@ -17,7 +17,7 @@ namespace XmlFormatter.Model
             foreach (var item in textFields.Select((value, index) => new { value, index }))
             {
                 var p1 = new HtmlTag("p");
-                p1.Add($"Текстовое поле №{item.index}");
+                p1.Add($"Текстовое поле №{item.index + 1}");
                 var p2 = new HtmlTag("p");
                 p2.Add(item.value);
 
