@@ -56,6 +56,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Common\DataFromMainWindow.cs" />
+    <Compile Include="Html\HtmlTag.cs" />
+    <Compile Include="Model\ContentEncoder.cs" />
+    <Compile Include="Model\FilesLoader.cs" />
+    <Compile Include="Model\IFilesLoader.cs" />
     <Compile Include="Model\IXmlDocumentBuilder.cs" />
     <Compile Include="Model\XmlDocumentBuilder.cs" />
     <Compile Include="Model\XmlFormatterModel.cs" />

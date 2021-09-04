@@ -17,7 +17,9 @@ namespace XmlFormatter
         public App()
         {
             var mainWindow = new MainWindow();
-            var model = new XmlFormatterModel(mainWindow);
+            var documentBuilder = new XmlDocumentBuilder();
+            var filesLoader = new FilesLoader();
+            var model = new XmlFormatterModel(mainWindow, documentBuilder, filesLoader);
         }
     }
 }
