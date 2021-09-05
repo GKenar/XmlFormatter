@@ -8,6 +8,11 @@
         mc:Ignorable="d"
         Title="HtmlViewerWindow" Height="800" Width="600">
     <Grid>
-        <awe:WebControl Name="webControl1"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <awe:WebControl Name="webControl1" Grid.Row="1"/>
+        <Button Name="printButton" Grid.Row="0" Click="printButton_Click">Печать</Button>
     </Grid>
 </Window>
