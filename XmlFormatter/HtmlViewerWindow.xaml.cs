@@ -33,6 +33,8 @@ namespace XmlFormatter
         {
             //webControl1.ViewType = WebViewType.Window;
             //webControl1.LoadHTML(html);
+            webControl1.PrintComplete += WebControl1OnPrintComplete;
+
             const string htmlPageName = "temp.html";
 
             using (var sr = new StreamWriter(htmlPageName))
@@ -43,10 +45,9 @@ namespace XmlFormatter
             webControl1.Source = new Uri($"{Directory.GetCurrentDirectory()}/{htmlPageName}", UriKind.RelativeOrAbsolute);
         }
 
-        private void printButton_Click(object sender, RoutedEventArgs e)
+        private void WebControl1OnPrintComplete(object sender, PrintCompleteEventArgs printCompleteEventArgs)
         {
-            const string pdfFileName = "doc_1.pdf";
-            webControl1.PrintToFile(Directory.GetCurrentDirectory(), PrintConfig.Default);
+            var pdfFileName = printCompleteEventArgs.Files[0]; //Нет проверки
 
             var pdfdocument = new PdfDocument();
             pdfdocument.LoadFromFile(pdfFileName);
@@ -68,10 +69,18 @@ namespace XmlFormatter
             {
                 return;
             }
-            
+
             pdfdocument.PrintSettings.SelectPageRange(pDialog.PrinterSettings.FromPage, pDialog.PrinterSettings.ToPage);
             pdfdocument.PrintSettings.PrinterName = pDialog.PrinterSettings.PrinterName;
             pdfdocument.Print();
+
+            File.Delete(pdfFileName);
+        }
+
+        private void printButton_Click(object sender, RoutedEventArgs e)
+        {
+            //const string pdfFileName = "doc_1.pdf";
+            webControl1.PrintToFile(Directory.GetCurrentDirectory(), PrintConfig.Default); 
         }
     }
 }
