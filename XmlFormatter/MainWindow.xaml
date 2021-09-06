@@ -34,30 +34,30 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Row="0" Grid.Column="0">Текстовое поле 1</TextBlock>
+                    <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom" Margin="5 5">Текстовое поле 1</TextBlock>
                     <TextBox Name="field1TextBox" Grid.Row="1" Grid.Column="0" Margin="5 0"/>
-                    <TextBlock Grid.Row="2" Grid.Column="0">Текстовое поле 2</TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom" Margin="5 5">Текстовое поле 2</TextBlock>
                     <TextBox Name="field2TextBox" Grid.Row="3" Grid.Column="0" Margin="5 0"/>
-                    <TextBlock Grid.Row="4" Grid.Column="0">Текстовое поле 3</TextBlock>
+                    <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Bottom" Margin="5 5">Текстовое поле 3</TextBlock>
                     <TextBox Name="field3TextBox" Grid.Row="5" Grid.Column="0" Margin="5 0"/>
-                    <TextBlock Grid.Row="6" Grid.Column="0">Текстовое поле 4</TextBlock>
+                    <TextBlock Grid.Row="6" Grid.Column="0" VerticalAlignment="Bottom" Margin="5 5">Текстовое поле 4</TextBlock>
                     <TextBox Name="field4TextBox" Grid.Row="7" Grid.Column="0" Margin="5 0"/>
-                    <TextBlock Grid.Row="8" Grid.Column="0">Текстовое поле 5</TextBlock>
+                    <TextBlock Grid.Row="8" Grid.Column="0" VerticalAlignment="Bottom" Margin="5 5">Текстовое поле 5</TextBlock>
                     <TextBox Name="field5TextBox" Grid.Row="9" Grid.Column="0" Margin="5 0"/>
-                    <TextBlock Grid.Row="0" Grid.Column="1">Текстовое поле 6</TextBlock>
+                    <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Margin="5 5">Текстовое поле 6</TextBlock>
                     <TextBox Name="field6TextBox" Grid.Row="1" Grid.Column="1" Margin="5 0"/>
-                    <TextBlock Grid.Row="2" Grid.Column="1">Текстовое поле 7</TextBlock>
+                    <TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom" Margin="5 5">Текстовое поле 7</TextBlock>
                     <TextBox Name="field7TextBox" Grid.Row="3" Grid.Column="1" Margin="5 0"/>
-                    <TextBlock Grid.Row="4" Grid.Column="1">Текстовое поле 8</TextBlock>
+                    <TextBlock Grid.Row="4" Grid.Column="1" VerticalAlignment="Bottom" Margin="5 5">Текстовое поле 8</TextBlock>
                     <TextBox Name="field8TextBox" Grid.Row="5" Grid.Column="1" Margin="5 0"/>
-                    <TextBlock Grid.Row="6" Grid.Column="1">Текстовое поле 9</TextBlock>
+                    <TextBlock Grid.Row="6" Grid.Column="1" VerticalAlignment="Bottom" Margin="5 5">Текстовое поле 9</TextBlock>
                     <TextBox Name="field9TextBox" Grid.Row="7" Grid.Column="1" Margin="5 0"/>
-                    <TextBlock Grid.Row="8" Grid.Column="1">Текстовое поле 10</TextBlock>
+                    <TextBlock Grid.Row="8" Grid.Column="1" VerticalAlignment="Bottom" Margin="5 5">Текстовое поле 10</TextBlock>
                     <TextBox Name="field10TextBox" Grid.Row="9" Grid.Column="1" Margin="5 0"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Таблица">
-                <DataGrid x:Name="dataGrid1" AutoGenerateColumns="False">
+                <DataGrid x:Name="dataGrid1" AutoGenerateColumns="False" CanUserSortColumns="False">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Первая колонка" Binding="{Binding Path=FirstColumn}" />
                         <DataGridTextColumn Header="Вторая колонка" Binding="{Binding Path=SecondColumn}" />
@@ -80,6 +80,6 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button Grid.Row="2" Grid.Column="0" Name="submitButton" Click="submitButton_Click" >Sumbit</Button>
+        <Button Name="submitButton" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="0 5" Click="submitButton_Click" >Просмотр</Button>
     </Grid>
 </Window>
