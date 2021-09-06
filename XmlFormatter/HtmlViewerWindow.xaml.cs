@@ -32,12 +32,15 @@ namespace XmlFormatter
         public void LoadHtml(string html)
         {
             //webControl1.ViewType = WebViewType.Window;
-            webControl1.LoadHTML(html);
+            //webControl1.LoadHTML(html);
+            const string htmlPageName = "temp.html";
 
-            using (var sr = new StreamWriter("test.html"))
+            using (var sr = new StreamWriter(htmlPageName))
             {
                 sr.Write(html);
             }
+
+            webControl1.Source = new Uri($"{Directory.GetCurrentDirectory()}/{htmlPageName}", UriKind.RelativeOrAbsolute);
         }
 
         private void printButton_Click(object sender, RoutedEventArgs e)
