@@ -31,7 +31,7 @@ namespace XmlFormatter
 
         public void LoadHtml(string html)
         {
-            webControl1.ViewType = WebViewType.Window;
+            //webControl1.ViewType = WebViewType.Window;
             webControl1.LoadHTML(html);
 
             using (var sr = new StreamWriter("test.html"))

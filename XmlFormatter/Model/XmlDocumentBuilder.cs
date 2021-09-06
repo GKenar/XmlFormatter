@@ -55,7 +55,7 @@ namespace XmlFormatter.Model
                 var aTag = new HtmlTag("a");
                 var fileName = Path.GetFileName(filesPaths[i]);
 
-                aTag.SetAttribute($"download=\"{fileName}\" href=\"data:;base64,{filesContent[i]}\"");
+                aTag.SetAttribute($"download=\"{fileName}\" href=\"data:application/msword;base64,{filesContent[i]}\"");
                 aTag.Add(fileName);
 
                 application.Add(aTag);

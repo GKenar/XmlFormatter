@@ -67,6 +67,7 @@ namespace XmlFormatter
         private void attachFileButton_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Word Documents|*.docx|Word Documents|*.doc";
             if (openFileDialog.ShowDialog() == true)
                 _filesList.AddRange(openFileDialog.FileNames);
 
