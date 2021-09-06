@@ -4,6 +4,6 @@ namespace XmlFormatter.Model
 {
     interface IFilesLoader
     {
-        List<string> Load(List<string> paths);
+        List<byte[]> Load(List<string> paths);
     }
 }

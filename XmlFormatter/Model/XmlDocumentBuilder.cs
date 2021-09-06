@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Xml.Linq;
 using XmlFormatter.Common;
 using XmlFormatter.Html;
 
@@ -13,6 +13,10 @@ namespace XmlFormatter.Model
             var doc = new HtmlTag("html");
             var body = new HtmlTag("body");
             var content = new HtmlTag("content");
+
+            var meta = new HtmlTag("meta");
+            meta.SetAttribute("charset=\"UTF-8\"");
+            body.Add(new HtmlTag("head", meta));
 
             foreach (var item in textFields.Select((value, index) => new { value, index }))
             {
@@ -49,8 +53,10 @@ namespace XmlFormatter.Model
                 var p1 = new HtmlTag("p");
                 var application = new HtmlTag("application");
                 var aTag = new HtmlTag("a");
-                aTag.SetAttribute($"download=\"{filesPaths[i]}\" href=\"data: ; base64, {filesContent[i]}\"");
-                aTag.Add(filesPaths[i]);
+                var fileName = Path.GetFileName(filesPaths[i]);
+
+                aTag.SetAttribute($"download=\"{fileName}\" href=\"data:;base64,{filesContent[i]}\"");
+                aTag.Add(fileName);
 
                 application.Add(aTag);
                 p1.Add(application);
