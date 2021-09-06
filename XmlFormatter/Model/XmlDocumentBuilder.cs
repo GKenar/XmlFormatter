@@ -16,7 +16,10 @@ namespace XmlFormatter.Model
 
             var meta = new HtmlTag("meta");
             meta.SetAttribute("charset=\"UTF-8\"");
-            body.Add(new HtmlTag("head", meta));
+            doc.Add(new HtmlTag("head", meta));
+
+            var container = new HtmlTag("container");
+            container.SetAttribute("id=\"electronic-document\"");
 
             foreach (var item in textFields.Select((value, index) => new { value, index }))
             {
@@ -45,6 +48,8 @@ namespace XmlFormatter.Model
                 table.Add(tr);
             }
 
+            content.Add(table);
+
             // Files
             var applications = new HtmlTag("applications");
 
@@ -63,11 +68,28 @@ namespace XmlFormatter.Model
                 applications.Add(p1);
             }
 
-            content.Add(table);
-            body.Add(content);
-            body.Add(applications);
+            container.Add(content);
+            container.Add(applications);
+            body.Add(container);
             doc.Add(body);
-            doc.Add(@"<style> table, th, td { border: 1px solid black; } </style>");
+            doc.Add(@"<style> 
+            :root {
+                background-color: #e6e6e6;
+            }
+            table, th, td { 
+                border: 1px solid black; 
+            } 
+            #electronic-document {
+                display: block !important;
+                position: relative;
+                width: 600px;
+                margin: 24px auto;
+                padding: 52px 52px 52px 104px;
+                background-color: #fff;
+                border: #c6c6c6 1px solid;
+                font-family: Arial, sans-serif;
+            }
+            </style>");
 
             return doc.ToString();
         }
