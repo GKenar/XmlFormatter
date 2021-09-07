@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using XmlFormatter.Common;
 using XmlFormatter.View;
 
@@ -23,10 +24,17 @@ namespace XmlFormatter.Model
 
         private void MainWindowOnSubmitButtonPressed(DataFromMainWindow data)
         {
-            var filesContent = _filesLoader.Load(data.FilesNames).Select(ContentEncoder.ToBase64).ToList();
-            var result = _documentBuilder.Build(data.TextFields, data.Table, filesContent, data.FilesNames);
+            try
+            {
+                var filesContent = _filesLoader.Load(data.FilesNames).Select(ContentEncoder.ToBase64).ToList();
+                var result = _documentBuilder.Build(data.TextFields, data.Table, filesContent, data.FilesNames);
 
-            _mainWindow.ShowResult(result);
+                _mainWindow.ShowResult(result);
+            }
+            catch (Exception ex)
+            {
+                _mainWindow.ShowMessage(ex.Message);
+            }
         }
     }
 }

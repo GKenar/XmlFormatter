@@ -64,6 +64,11 @@ namespace XmlFormatter
             htmlViewer.LoadHtml(html);
         }
 
+        public void ShowMessage(string message)
+        {
+            MessageBox.Show(message, "XmlFormatter", MessageBoxButton.OK);
+        }
+
         private void attachFileButton_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
