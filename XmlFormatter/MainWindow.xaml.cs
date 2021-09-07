@@ -60,8 +60,8 @@ namespace XmlFormatter
         public void ShowResult(string html)
         {
             var htmlViewer = _htmlViewerWindowFactory.Create();
-            htmlViewer.ShowDialog();
             htmlViewer.LoadHtml(html);
+            htmlViewer.ShowDialog();
         }
 
         public void ShowMessage(string message)
