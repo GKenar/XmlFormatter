@@ -86,7 +86,6 @@ namespace XmlFormatter.Model
                 margin: 24px auto;
                 padding: 52px 52px 52px 104px;
                 background-color: #fff;
-                border: #c6c6c6 1px solid;
                 font-family: Arial, sans-serif;
             }
             </style>");
