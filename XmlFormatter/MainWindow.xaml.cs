@@ -17,11 +17,7 @@ namespace XmlFormatter
         private readonly List<string> _filesList = new List<string>();
         private readonly IIHtmlViewerWindowFactory _htmlViewerWindowFactory;
 
-        List<MyTableRow> _tableRowsList = new List<MyTableRow>
-        {
-            new MyTableRow { FirstColumn = "a", SecondColumn = "b", ThirdColumn = "c" },
-            new MyTableRow { FirstColumn = "d", SecondColumn = "e", ThirdColumn = "f" },
-        };
+        private readonly List<MyTableRow> _tableRowsList = new List<MyTableRow>();
 
         public MainWindow()
         {
